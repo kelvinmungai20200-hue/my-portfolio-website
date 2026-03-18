@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kelvin's website</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        h1{
+            color: darkblue;
+        }
+        h2{
+            color:green;
+        }
+        p{
+            font-size: 18px;
+        }
+        button{
+            background-color: darkblue;
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+        }
+        a{
+            text-decoration: none;
+            margin: 10px;
+            color: darkred;
+            font-weight: bold;
+        }
+    </style>    
+    </head>
+    <body>
+        <h2>Navigation</h2>
+
+        <a href="index.html">Home</a>|
+        <a href="about.html">About</a>|
+        <a href="projects.html">Projects</a>|
+        <a href="contact.html">Contact</a>
+
+        <h1 id="home">Hello, my name is Kelvin</h1>
+        <p> I am learning coding and web development.</p>
+        <p>One day I  want to become a professional programmer.</p>
+        <p id="message">Welcome to my Website</p>
+        <button onclick="changeText()">Click Me</button>
+        <h2 id="about">My Coding journey</h2>
+        <p>One day I want to study Computer Science in Germany and become a professional developer.</p>
+        <h2> My Goals</h2>
+        <p>I  want yo become a software developer and work internationally.</p>
+        <p>I also want to build my own tech company in the future.</p>
+        <button>Click Me</button>
+        <h2>My Skills</h2>
+        <p>Html</p>
+        <p>Website Design</p>
+        <p>Python</p>
+        <h2>My Inspiration</h2>
+        <img src="coding.jpg" width="400">
+        <h2>My Dream House</h2>
+        <p>In the future I  want to build a beatiful modern housee.
+            It will have large windows, a big garage, and a peaceful garden.
+            I want it to be a smart home where technology controls the lights and security.
+            I will build this house through hard work, learning programming, and
+            becoming a successful software developer. </p>
+        <script>
+            let isChanged = false;
+            function changeText(){
+                let text = document.getElementById("message");
+
+                if (isChanged === false) {
+                    text.innerHTML = "You clicked the button!";
+                    text.style.color ="red";
+                    document.body.style.backgroundColor ="lightblue";
+                    isChanged = true;
+                } else {
+                    text.innerHTML = "Welcome to my Website";
+                    text.style.color ="black";
+                    document.body.style.backgroundColor ="white";
+                    isChanged = fasle;
+                }
+            }
+        </script>
+        <h2 id="contact">Contact Me</h2>
+        <p> If you want to work with me, send me an email.</p>
+        <a href="https://mail.google.com/mail/?view=cm&to=kelvinmungai20200@gmail.com" target="_blank"><button>Email Me</button></a>
+        <hr>
+        <p>Website Created by Kelvin Mungai - Future Software Developer</p>
+    </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Projects</title>
+    <style>
+        body{
+            font-family: Arial;
+            margin: 20px;
+            background-color: lightblue;
+        }
+        h1{
+            color: darkblue;
+        }
+        h2{
+            color: green;
+        }
+        p{
+            font-size: 18px;
+        }
+        a{
+            text-decoration: none;
+            margin: 10px;
+            color: darkred;
+            font-weight: bold;
+        }
+        button{
+            background-color: darkblue;
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        img{
+            width: 400px;
+            margin-top: 10px;
+            border: 2px solid darkblue;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px gray;
+            transition: transform 0.3s;
+        }
+        img:hover{
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>My Projects</h1>
+    <h2>Project 1: Personal website</h2>
+    <p>This is my first project where I build a multi-page website with home,
+        about, contact, and navigation links.</p>
+    <img src="coding.jpg" alt="Website Project Image">
+    <h2>My Secret Message</h2>
+    <button onclick="toggleMessage()">Show message</button>
+    <p id="secret" style="display: none;">
+        This is my hidden message I am becoming a web developer!</p>
+    
+    <h2>Project 2: Future projects</h2>
+    <p>I will add more projects as I Learn new skills like Python apps,
+       web applications, and games.</p>
+
+    <a href="index.html">Go Back Home</a>
+    <h2>My Counter App</h2>
+
+    <h2>My Project Gallery</h2>
+    <img id="projectImage" src="project1.jpg" alt="projectImage" width="300">
+    <br><br>
+    <button onclick="swapImage()">Change Image</button>
+
+    <p id="count">0</p>
+    <button onclick="increase()">Increase</button>
+    <button onclick="decrease()">Decrease</button>
+    <button onclick="resetCounter()">Reset</button>
+    <script>
+        function toggleMessage(){
+            let message = document.getElementById("secret");
+
+            if (message.style.display ==="none"){
+                message.style.display ="block";
+            } else {
+                message.style.display ="none";
+
+            }
+        }
+    </script>
+    <script>
+        let count = localStorage.getItem("count")?
+        parseInt(localStorage.getItem("count")) : 0;
+        updateDisplay();
+        function increase(){
+            count++;
+            saveAndUpdate();
+        }
+        function decrease(){
+            if (count > 0){
+                count--;
+            }
+            saveAndUpdate();
+        }
+        function resetCounter() {
+            count = 0;
+            saveAndUpdate();
+        }
+        function saveAndUpdate(){
+            localStorage.setItem("count", count);
+            updateDispaly();
+        }
+        function updateDisplay(){
+            let display = document.getElementById("count");
+            display.innerHTML = count;
+
+            if (count ===0){
+                display.style.color ="black";
+            } else if (count < 5) {
+                display.style.color ="green";
+            } else{
+                display.style.color ="red"; 
+            }
+        }
+        
+    </script>
+    <script>
+        let imageSwitched = false;
+        function swapImage(){
+            let img = document.getElementById("projectImage");
+
+            if (imageSwitched === false){
+                img.src ="project2.jpg";
+                imageSwitched = true;
+            } else{
+                img.src = "project1.jpg";
+                imageSwitched = false;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
